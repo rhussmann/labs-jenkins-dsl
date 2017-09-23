@@ -12,6 +12,9 @@ pipelineJob('lists.rhussmann.com') {
       scriptPath('jenkins-hooks/Jenkinsfile')
     }
   }
+  triggers {
+    githubPush()
+  }
   wrappers {
     colorizeOutput()
   }
