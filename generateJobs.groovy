@@ -17,6 +17,7 @@ pipelineJob('lists.rhussmann.com') {
 	  }
 	}
       }
+      scriptPath('jenkins-hooks/Jenkinsfile')
     }
   }
 }
