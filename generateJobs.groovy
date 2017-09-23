@@ -9,10 +9,12 @@ pipelineJob('lists.rhussmann.com') {
   }
   definition {
     cpsScm {
-      git {
-	remote {
-	  credentials('ssh-lists.rhussmann.com')
-	  url('git@github.com:rhussmann/christmas-lists.git')
+      scm {
+	git {
+	  remote {
+	    credentials('ssh-lists.rhussmann.com')
+	    url('git@github.com:rhussmann/christmas-lists.git')
+	  }
 	}
       }
     }
