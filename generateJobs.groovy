@@ -34,6 +34,9 @@ pipelineJob('beta.rickyandjodi.com') {
       scriptPath('jenkins-hooks/Jenkinsfile')
     }
   }
+  triggers {
+    githubPush()
+  }
   wrappers {
     colorizeOutput()
   }
