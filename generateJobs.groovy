@@ -8,9 +8,13 @@ pipelineJob('lists.rhussmann.com') {
     }
   }
   definition {
-    cps {
-      script(readFileFromWorkspace('jenkins-hooks/Jenkinsfile'))
-      sandbox()
+    cpsScm {
+      git {
+	remote {
+	  credentials('ssh-lists.rhussmann.com')
+	  url('git@github.com:rhussmann/christmas-lists.git')
+	}
+      }
     }
   }
 }
