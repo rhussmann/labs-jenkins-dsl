@@ -41,3 +41,25 @@ pipelineJob('beta.rickyandjodi.com') {
     colorizeOutput()
   }
 }
+
+pipelineJob('release-form-ui') {
+  definition {
+    cpsScm {
+      scm {
+	git {
+	  remote {
+	    credentials('release-form-ui')
+	    url('git@github.com:rhussmann/release-form-ui.git')
+	  }
+	}
+      }
+      scriptPath('jenkins-hooks/Jenkinsfile')
+    }
+  }
+  triggers {
+    githubPush()
+  }
+  wrappers {
+    colorizeOutput()
+  }
+}
